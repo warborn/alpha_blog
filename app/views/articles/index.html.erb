@@ -1,5 +1,3 @@
-<h1>Listing all Articles</h1>
-
 <h1 class="center">Listing all articles</h1>
 
 <% @articles.each do |article| %>
@@ -11,6 +9,12 @@
         </div>
         <div class="article-body">
           <%= truncate(article.description, length: 100) %>
+          <div class="article-meta-details">
+            <smal>Created by: <%= article.user.username %>, 
+                  <%= time_ago_in_words(article.created_at) %> ago,
+                  last updated: <%= time_ago_in_words(article.updated_at) %> ago
+            </smal>
+          </div>
         </div>
         <div class="article-actions">
           <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-xs btn-primary" %>
