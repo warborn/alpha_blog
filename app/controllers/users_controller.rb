@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     
   before_action :find_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   
   def index
     @users = User.paginate(page: params[:page], per_page: 5)
@@ -44,5 +45,12 @@ class UsersController < ApplicationController
     
     def find_user
       @user = User.find(params[:id])
+    end
+    
+    def require_same_user
+      if current_user != @user
+        flash[:danger] = "Solo puedes editar tu cuenta"
+        redirect_to root_path
+      end
     end
 end
