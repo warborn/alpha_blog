@@ -1,4 +1,4 @@
-<h1 class="center">Todos los bloggers registrados</h1>
+<h1 class="center">Todos los usuarios registrados</h1>
 
 <div class="center">
   <%= will_paginate %>
@@ -10,10 +10,10 @@
           <li class="article-title">
               <%= link_to user.username, user_path(user) %>
           </li>
-          <li><small><%= pluralize(user.articles.count, "Articulo") %></small></li>
+          <li><small><%= pluralize(user.articles.count, "Artículo") %></small></li>
           <% if logged_in? and current_user.admin? %>
             <li><%= link_to "Eliminar usuario", user_path(user), method: :delete, 
-                                                                 data: { confirm: "Se eliminara el usuario y todos sus articulos, estas seguro?" }%></li>
+                                                                 data: { confirm: "Se eliminara el usuario y todos sus artículos, estas seguro?" }%></li>
           <% end %>
         </div>
       </div>

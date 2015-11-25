@@ -3,7 +3,7 @@
 <div class="center">
   <% if logged_in? and current_user.admin? %>
     <div class="row">
-      <span class="badge category"><%= link_to "Editar categoria", edit_category_path(@category) %></span>
+      <span class="badge category"><%= link_to "Editar categoría", edit_category_path(@category) %></span>
     </div>
   <% end %>  
   <%= will_paginate @category_articles %>

@@ -1,7 +1,37 @@
-$navbar-default-bg: #053f69;
+$navbar-default-bg: #163853;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.main-container {
+    min-height: 500px;
+}
+
+.navbar-default .navbar-nav > li > a { 
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li:hover > a { 
+    color: #333232;
+}
+
+.navbar-default .navbar-nav > li:hover { 
+    background-color: #f0f0f0;
+}
+
+.btn-primary {
+    background-color: #5e92e5;
+}
+
+.btn-danger {
+    background-color: #a0a0a0;
+    border: 1px solid #9b9b9b;
+}
+
+.btn-danger:hover {
+    background-color: #797979;
+    border: 1px solid #797979;
+}
 
 #logo {
     color: #fff;

@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "Your account was updated successfully"
+      flash[:success] = "Tu cuenta fue modificada exitosamente"
       redirect_to articles_path
     else
       render :edit
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   
   def destroy
     @user.destroy
-    flash[:danger] = "El usuario y todos sus articulos han sido eliminados"
+    flash[:danger] = "El usuario y todos sus artículos han sido eliminados"
     redirect_to users_path
   end
   
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
     
     def require_same_user
       if current_user != @user and !current_user.admin?
-        flash[:danger] = "Solo puedes editar tu cuenta"
+        flash[:danger] = "Solo puedes modificar tu cuenta"
         redirect_to root_path
       end
     end

@@ -5,7 +5,16 @@
         <div class="panel-heading">
           <h2 class="panel-title">
             <%= pluralize(object.errors.count, "error") %> 
-            prohibited this article from being saved:
+            no permitieron que 
+            <%= if object.class.to_s == 'Article'
+                  "el artículo" 
+                elsif object.class.to_s == 'User'
+                  "el usuario"
+                else
+                  "la categoría"
+                end
+            %>
+            se guardara correctamente:
           </h2>
         </div>
         <div class="panel-body">
