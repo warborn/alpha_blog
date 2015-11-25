@@ -1,6 +1,7 @@
 <h1 class="center">Todas las categorias</h1>
 
 <div class="center">
+  <%= will_paginate %>
   <% @categories.each do |category| %>
     <ul class="listing">
       <div class="row">
@@ -8,8 +9,10 @@
           <li class="article-title">
             <%= link_to "#{category.name}", category_path(category) %>
           </li>
+          <li><small><%= pluralize(category.articles.count, "Article")%></small></li>
         </div>
       </div>
     </ul>
   <% end %>
+  <%= will_paginate %>
 </div>
